@@ -42,11 +42,11 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 ### Relationships and Constraints
 
 | Relationship | Cardinality | Participation | Notes |
-|--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
-
+| :--- | :--- | :--- | :--- |
+| Member ENROLLS IN Program | M:N | Partial (Member, Program) | Members can join multiple programs; programs have multiple members. |
+| Trainer LEADS Program | M:N | Partial (Trainer), Partial (Program) | Trainers lead multiple programs; programs have multiple trainers. |
+| Member BOOKS Personal_Session WITH Trainer | M:N | Partial (Member, Trainer), Total (Session) | Members book sessions with trainers; trainers conduct sessions. |
+| Member MAKES Payment | 1:N | Total (Payment), Partial (Member) | Payments by a member; a member makes many payments. |
 ### Assumptions
 - 
 - 
