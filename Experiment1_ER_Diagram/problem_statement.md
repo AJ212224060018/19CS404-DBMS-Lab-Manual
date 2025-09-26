@@ -48,9 +48,9 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 | Member BOOKS Personal_Session WITH Trainer | M:N | Partial (Member, Trainer), Total (Session) | Members book sessions with trainers; trainers conduct sessions. |
 | Member MAKES Payment | 1:N | Total (Payment), Partial (Member) | Payments by a member; a member makes many payments. |
 ### Assumptions
-- 
-- 
-- 
+-  Person can be either a Member, a Trainer, or potentially both
+- A Member has one primary membership (with a type, fee, and start date) but can Enroll in multiple Programs.
+- A Program is Led by one Trainer.
 
 ---
 
