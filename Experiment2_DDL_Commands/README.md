@@ -123,91 +123,152 @@ FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
 
 **Output:**
 
-![Output1](output.png)
+<img width="1366" height="173" alt="image" src="https://github.com/user-attachments/assets/45d1380b-d11d-40e1-a8e3-f1a7c4ecdc1b" />
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+Insert all customers from Old_customers into Customers
+
+Table attributes are CustomerID, Name, Address, Email
 
 ```sql
--- Paste your SQL code below for Question 2
+INSERT INTO Customers(CustomerID,Name,Address,Email)
+SELECT CustomerID,Name,Address,Email
+from Old_customers;
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="875" height="166" alt="image" src="https://github.com/user-attachments/assets/cf1db992-c83b-4cbd-9e74-03f7e2f5898f" />
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+Insert a product with ProductID 104, Name Tablet, and Category Electronics into the Products table, where Price and Stock should use default values.
 
 ```sql
--- Paste your SQL code below for Question 3
+INSERT INTO Products(ProductID,Name,Category)
+values(104,'Tablet','Electronics')
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="1307" height="230" alt="image" src="https://github.com/user-attachments/assets/5a515fcc-42e7-4e60-95b7-5ffd6a0f8238" />
 
 **Question 4**
 ---
--- Paste Question 4 here
+Create a new table named products with the following specifications:
+product_id as INTEGER and primary key.
+product_name as TEXT and not NULL.
+list_price as DECIMAL (10, 2) and not NULL.
+discount as DECIMAL (10, 2) with a default value of 0 and not NULL.
+A CHECK constraint at the table level to ensure:
+list_price is greater than or equal to discount
+discount is greater than or equal to 0
+list_price is greater than or equal to 0
 
 ```sql
--- Paste your SQL code below for Question 4
+CREATE TABLE products(
+product_id INTEGER PRIMARY KEY,
+product_name TEXT NOT NULL,
+list_price DECIMAL(10,2) NOT NULL,
+discount DECIMAL(10,2) DEFAULT 0 NOT NULL,
+CHECK (list_price>=discount AND discount>=0 AND list_price>=0)
+);
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1388" height="175" alt="image" src="https://github.com/user-attachments/assets/7fa39bf2-59f4-4b3e-acd5-b6d009ec0c67" />
 
 **Question 5**
 ---
--- Paste Question 5 here
+In the Employee table, insert a record where some fields are NULL, another record where all fields are filled without any NULL values, and a third record where some fields are filled, and others are left as NULL.
+
+EmployeeID  Name          Position    Department  Salary
+----------  ------------  ----------  ----------  ----------
+5           George Clark  Consultant
+7           Noah Davis    Manager     HR          60000
+8           Ava Miller    Consultant  IT
 
 ```sql
--- Paste your SQL code below for Question 5
+INSERT INTO Employee(EmployeeID, Name,Position,Department,Salary)
+VALUES(5,'George Clark','Consultant',NULL,NULL);
+INSERT INTO Employee(EmployeeID, Name,Position,Department,Salary) 
+VALUES(7,'Noah Davis','Manager','HR',60000);
+INSERT INTO Employee(EmployeeID, Name,Position,Department,Salary) 
+VALUES(8,'Ava Miller','Consultant','IT',NULL);
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="1285" height="282" alt="image" src="https://github.com/user-attachments/assets/5bfff43c-bfa8-4c9d-9d28-f56fa5ca37e8" />
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+Write an SQL query to add two new columns, department_id and manager_id, to the table employee with datatype of INTEGER. The manager_id column should have a default value of NULL.
+
+ 
 
 ```sql
--- Paste your SQL code below for Question 6
+ALTER TABLE Employee
+ADD COLUMN department_id INTEGER;
+ALTER TABLE Employee
+ADD COLUMN manager_id INTEGER DEFAULT NULL;
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="1273" height="211" alt="image" src="https://github.com/user-attachments/assets/c1dfa2b9-20a8-4749-8366-bc99073f9ae9" />
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+Create a table named Shipments with the following constraints:
+ShipmentID as INTEGER should be the primary key.
+ShipmentDate as DATE.
+SupplierID as INTEGER should be a foreign key referencing Suppliers(SupplierID).
+OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
 
 ```sql
--- Paste your SQL code below for Question 7
+CREATE TABLE Shipments(
+ShipmentID INTEGER PRIMARY KEY,
+ShipmentDate DATE,
+SupplierID INTEGER,
+OrderID INTEGER,
+FOREIGN KEY (supplierID) REFERENCES Suppliers(SupplierID),
+FOREIGN KEY (OrderID) REFERENCES Orders(OrderID));
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="1322" height="210" alt="image" src="https://github.com/user-attachments/assets/b80b59ba-d6ec-420c-b12e-46f083c97570" />
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+Create a table named Invoices with the following constraints:
+
+InvoiceID as INTEGER should be the primary key.
+InvoiceDate as DATE.
+DueDate as DATE should be greater than the InvoiceDate.
+Amount as REAL should be greater than 0.
+
 
 ```sql
--- Paste your SQL code below for Question 8
+CREATE TABLE Invoices(
+InvoiceID INTEGER PRIMARY KEY,
+InvoiceDate DATE,
+DueDate DATE CHECK (DueDate>InvoiceDate),
+Amount REAL CHECK (Amount>0));
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="1298" height="285" alt="image" src="https://github.com/user-attachments/assets/5c27619a-83ab-46b4-892a-d8cd5eac1eef" />
+
 
 **Question 9**
 ---
@@ -223,15 +284,22 @@ FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
 
 **Question 10**
 ---
--- Paste Question 10 here
+Create a table named Locations with the following columns:
+
+LocationID as INTEGER
+LocationName as TEXT
+Address as TEXT
 
 ```sql
--- Paste your SQL code below for Question 10
+CREATE TABLE Locations(
+LocationID INTEGER,
+LocationName TEXT,
+Address TEXT);
 ```
 
 **Output:**
 
-![Output10](output.png)
+
 
 
 ## RESULT
