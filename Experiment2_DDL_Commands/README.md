@@ -272,15 +272,20 @@ Amount REAL CHECK (Amount>0));
 
 **Question 9**
 ---
--- Paste Question 9 here
+Insert all employees from Former_employees into Employee
+
+Table attributes are EmployeeID, Name, Department, Salary
 
 ```sql
--- Paste your SQL code below for Question 9
+INSERT INTO Employee(EmployeeID,Name,Department,Salary)
+SELECT EmployeeID,Name,Department,Salary 
+FROM Former_employees;
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="1226" height="366" alt="image" src="https://github.com/user-attachments/assets/48558994-d25f-4d80-ac3e-ebf45aba7e22" />
+
 
 **Question 10**
 ---
