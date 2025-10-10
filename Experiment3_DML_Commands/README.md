@@ -222,7 +222,6 @@ AND OUTSTANDING_AMT<5000;
 ---
 Write a SQL query to Delete customers with 'GRADE' 3 and whose 'CUST_NAME' contains the substring 'BBB', and 'PAYMENT_AMT' is greater than 2000
 
-
 ```sql
 DELETE FROM customer
 WHERE GRADE=3 
@@ -230,7 +229,6 @@ WHERE GRADE=3
     AND PAYMENT_AMT>2000;```
 
 **Output:**
-
 <img width="1035" height="159" alt="image" src="https://github.com/user-attachments/assets/4cbe19c4-7fc7-4476-b619-d9b0d8a62b5a" />
 
 ## RESULT
