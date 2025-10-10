@@ -47,75 +47,143 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- Paste Question 1 here
+Write a SQL statement to Update the grade of all customers in Chennai city as  5. 
 
 ```sql
--- Paste your SQL code below for Question 1
+UPDATE customer
+    SET grade=5
+WHERE city='Chennai'
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="1301" height="407" alt="image" src="https://github.com/user-attachments/assets/8d6bc16f-ff3c-4cec-b18e-b746cd8a6cf1" />
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+Write a SQL statement to Update the per_unit_price to 25 and total_price accordingly in purchases table where purchase_date is '2022-08-15' and product_id is 12.
 
 ```sql
--- Paste your SQL code below for Question 2
+UPDATE purchases
+SET per_unit_price= 25,
+    total_price=25*quantity
+WHERE purchase_date='2022-08-15'
+AND product_id='12';
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="1345" height="252" alt="image" src="https://github.com/user-attachments/assets/8a391ef7-6ad8-4ae8-8c50-534e5d3f5efe" />
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+Update the reorder level to 40 pieces for all products belonging to the 'Grocery' category in the products table.
+
+PRODUCTS TABLE
+
+name               type
+-----------------  ---------------
+product_id         INT
+product_name       VARCHAR(100)
+category           VARCHAR(50)
+cost_price         DECIMAL(10,2)
+sell_price         DECIMAL(10,2)
+reorder_lvl        INT
+quantity           INT
+supplier_id        INT
 
 ```sql
--- Paste your SQL code below for Question 3
+UPDATE products
+SET reorder_lvl=40
+WHERE category='Grocery';
 ```
 
 **Output:**
 
-![Output3](output.png)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+Write a SQL statement to Update the product_name to 'Premium Bread' whose product ID is 5 in the products table.
+
+Products table
+
+---------------
+product_id
+product_name
+category
+cost_price
+sell_price
+reorder_lvl
+quantity
+supplier_id
 
 ```sql
--- Paste your SQL code below for Question 4
+UPDATE products
+SET product_name='Premium Bread'
+WHERE product_id='5';
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1351" height="187" alt="image" src="https://github.com/user-attachments/assets/d8895ca1-b021-4cde-a4c4-855d3d1f66d3" />
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+Write a SQL statement to change the EMAIL and COMMISSION_PCT column of the following EMPLOYEES table with 'not available' and 0.55 for those employees whose DEPARTMENT_ID is 110.
+
+Employees table
+
+---------------
+employee_id
+first_name
+last_name
+email
+phone_number
+hire_date
+job_id
+salary
+commission_pct
+manager_id
+department_id
 
 ```sql
--- Paste your SQL code below for Question 5
+UPDATE Employees
+SET email='not available',
+    commission_pct='0.55'
+WHERE department_id='110';
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="1295" height="240" alt="image" src="https://github.com/user-attachments/assets/7d148cc9-5bea-4cfa-bcee-d88a577eb86a" />
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+Write a SQL query to Delete customers from 'customer' table where 'CUST_COUNTRY' is neither 'India' nor 'USA'.
+
+Sample table: Customer
+
++-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+  
+|CUST_CODE  | CUST_NAME   | CUST_CITY   | WORKING_AREA | CUST_COUNTRY | GRADE | OPENING_AMT | RECEIVE_AMT | PAYMENT_AMT |OUTSTANDING_AMT| PHONE_NO     | AGENT_CODE |
++-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+
+| C00013    | Holmes      | London      | London       | UK           |     2 |     6000.00 |     5000.00 |     7000.00 |       4000.00 | BBBBBBB      | A003       |
+| C00001    | Micheal     | New York    | New York     | USA          |     2 |     3000.00 |     5000.00 |     2000.00 |       6000.00 | CCCCCCC      | A008       |
+| C00020    | Albert      | New York    | New York     | USA          |     3 |     5000.00 |     7000.00 |     6000.00 |       6000.00 | BBBBSBB      | A008       |
 
 ```sql
--- Paste your SQL code below for Question 6
+DELETE FROM customer
+WHERE CUST_COUNTRY NOT IN ('India','USA');
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="1031" height="150" alt="image" src="https://github.com/user-attachments/assets/322d3920-9371-411e-bcd0-d56b5740a4a3" />
+
 
 **Question 7**
 ---
