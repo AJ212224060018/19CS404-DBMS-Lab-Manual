@@ -166,15 +166,6 @@ WHERE department_id='110';
 ---
 Write a SQL query to Delete customers from 'customer' table where 'CUST_COUNTRY' is neither 'India' nor 'USA'.
 
-Sample table: Customer
-
-+-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+  
-|CUST_CODE  | CUST_NAME   | CUST_CITY   | WORKING_AREA | CUST_COUNTRY | GRADE | OPENING_AMT | RECEIVE_AMT | PAYMENT_AMT |OUTSTANDING_AMT| PHONE_NO     | AGENT_CODE |
-+-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+
-| C00013    | Holmes      | London      | London       | UK           |     2 |     6000.00 |     5000.00 |     7000.00 |       4000.00 | BBBBBBB      | A003       |
-| C00001    | Micheal     | New York    | New York     | USA          |     2 |     3000.00 |     5000.00 |     2000.00 |       6000.00 | CCCCCCC      | A008       |
-| C00020    | Albert      | New York    | New York     | USA          |     3 |     5000.00 |     7000.00 |     6000.00 |       6000.00 | BBBBSBB      | A008       |
-
 ```sql
 DELETE FROM customer
 WHERE CUST_COUNTRY NOT IN ('India','USA');
@@ -187,51 +178,63 @@ WHERE CUST_COUNTRY NOT IN ('India','USA');
 
 **Question 7**
 ---
--- Paste Question 7 here
+Write a SQL query to Delete a Specific Surgery whose ID is 3
 
 ```sql
--- Paste your SQL code below for Question 7
+DELETE FROM surgeries 
+WHERE surgery_id=3;
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="1150" height="314" alt="image" src="https://github.com/user-attachments/assets/9dc7030e-71f5-4b89-b4cc-3c44563b31b6" />
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+Write a SQL query to Delete All Doctors with a NULL Last Name
 
 ```sql
--- Paste your SQL code below for Question 8
+DELETE FROM doctors 
+WHERE last_name IS NULL;
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="1217" height="623" alt="image" src="https://github.com/user-attachments/assets/c506903e-4ae7-481c-be73-d12eac707ce4" />
+
 
 **Question 9**
 ---
--- Paste Question 9 here
-
+Write a SQL query to Delete customers with 'GRADE' 3 or 'AGENT_CODE' 'A008' whose 'OUTSTANDING_AMT' is less than 5000
 ```sql
--- Paste your SQL code below for Question 9
+DELETE FROM customer
+WHERE (GRADE=3 OR AGENT_CODE='A008')
+AND OUTSTANDING_AMT<5000;
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="1054" height="125" alt="image" src="https://github.com/user-attachments/assets/bc15ec92-b789-46cb-b23f-b95fc2e914bc" />
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+Write a SQL query to Delete customers with 'GRADE' 3 and whose 'CUST_NAME' contains the substring 'BBB', and 'PAYMENT_AMT' is greater than 2000
+
 
 ```sql
--- Paste your SQL code below for Question 10
-```
+DELETE FROM customer
+WHERE GRADE=3 
+    AND CUST_NAME LIKE '%BBB%'
+    AND PAYMENT_AMT>2000;```
 
 **Output:**
 
-![Output10](output.png)
+<img width="1035" height="159" alt="image" src="https://github.com/user-attachments/assets/4cbe19c4-7fc7-4476-b619-d9b0d8a62b5a" />
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
+
+<img width="1427" height="543" alt="image" src="https://github.com/user-attachments/assets/52244d4c-802e-4b26-a728-9df4b5560154" />
+
