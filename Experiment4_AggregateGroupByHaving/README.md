@@ -65,7 +65,8 @@ Sample table: Patients Table
 SELECT Gender,
 COUNT(PatientID) AS TotalPatients
 FROM Patients
-GROUP BY Gender;```
+GROUP BY Gender;
+```
 
 **Output:**
 
