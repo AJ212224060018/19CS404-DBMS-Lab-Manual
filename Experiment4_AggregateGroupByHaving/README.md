@@ -81,7 +81,8 @@ SELECT Specialty,
 Gender,
 COUNT(*) AS TotalDoctors
 FROM Doctors
-GROUP BY Specialty,Gender;```
+GROUP BY Specialty,Gender;
+```
 
 **Output:**
 
