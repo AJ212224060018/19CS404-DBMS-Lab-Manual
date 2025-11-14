@@ -33,7 +33,7 @@ END;
 - Declare two numeric variables and initialize them.
 - Use an `IF` statement to compare the values.
 - Display the greater number using `DBMS_OUTPUT.PUT_LINE`.
-  ~~plsql
+  ```sql
   SET SERVEROUTPUT ON;
 
 DECLARE
@@ -48,7 +48,7 @@ BEGIN
 END;
 /
 
-  ~~ 
+  ``` 
 
 **Expected Output:**  
 Greater number is: 80
@@ -108,4 +108,5 @@ Largest of three number is 15
 
 ## RESULT
 Thus, the PL/SQL programs using variables, conditionals, and loops were executed successfully.
+
 
