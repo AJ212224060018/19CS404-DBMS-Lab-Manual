@@ -81,6 +81,7 @@ WHERE
 
 **Output:**
 
+<img width="731" height="339" alt="image" src="https://github.com/user-attachments/assets/a0dfd071-9380-4ab5-8406-0b7e9d6cc593" />
 
 **Question 2**
 ---
